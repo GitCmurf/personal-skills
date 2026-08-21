@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "policy": {
+    "automatic_update_detection": true,
+    "automatic_merge": false,
+    "one_active_provider_per_name": true,
+    "authority_order": [
+      "current-request",
+      "repository-protocol",
+      "project-adapter",
+      "personal-skill",
+      "upstream-skill",
+      "model-default"
+    ]
+  },
+  "sources": {
+    "pstack": {
+      "repository": "https://github.com/cursor/plugins.git",
+      "web": "https://github.com/cursor/plugins/tree/main/pstack",
+      "default_branch": "main",
+      "tracked_head": "46125561306434d8a1d7745d540d8932ab0cd2a2",
+      "licence": "MIT",
+      "shape": "plugin-subdirectory",
+      "strategy": "selective-vendor",
+      "onboarding": "active"
+    },
+    "mattpocock-skills": {
+      "repository": "https://github.com/mattpocock/skills.git",
+      "web": "https://github.com/mattpocock/skills",
+      "default_branch": "main",
+      "tracked_head": "5b15a47f2d7150f545fbcacbfe381787fc0230dc",
+      "licence": "MIT",
+      "shape": "multi-skill-repository",
+      "strategy": "selective-vendor",
+      "onboarding": "planned"
+    },
+    "superpowers": {
+      "repository": "https://github.com/obra/superpowers.git",
+      "web": "https://github.com/obra/superpowers",
+      "default_branch": "main",
+      "tracked_head": "b36e0829c6d0140e93cfef2ca599b1b07d4a7797",
+      "licence": "MIT",
+      "shape": "multi-harness-framework",
+      "strategy": "private-duplicate-when-customised",
+      "onboarding": "planned"
+    },
+    "impeccable": {
+      "repository": "https://github.com/pbakaus/impeccable.git",
+      "web": "https://github.com/pbakaus/impeccable",
+      "default_branch": "main",
+      "tracked_head": "f88b2837a7d7c3182e46307bbbb091a1ed547571",
+      "licence": "Apache-2.0",
+      "shape": "generated-multi-component-framework",
+      "strategy": "private-duplicate-when-customised",
+      "onboarding": "planned"
+    }
+  },
+  "skills": {
+    "unslop": {
+      "source": "pstack",
+      "source_path": "pstack/skills/unslop",
+      "installed_name": "unslop",
+      "activation": "active",
+      "implicit_invocation": true,
+      "upstream_baseline": "46125561306434d8a1d7745d540d8932ab0cd2a2",
+      "personal_path": "skills/unslop"
+    }
+  }
+}

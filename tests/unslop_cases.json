@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "id": "activate-document-revision",
+      "category": "activate",
+      "prompt": "Revise this report for its intended reader without changing its findings.",
+      "expect": "Apply the fidelity-first prose workflow."
+    },
+    {
+      "id": "activate-substantive-chat",
+      "category": "activate",
+      "prompt": "Explain the trade-off to me in a form I can understand and act on.",
+      "expect": "Apply the skill lightly to substantive conversational prose."
+    },
+    {
+      "id": "do-not-activate-code",
+      "category": "do-not-activate",
+      "prompt": "Refactor this Python function without changing its API.",
+      "expect": "Do not treat program source as reader-facing prose."
+    },
+    {
+      "id": "do-not-activate-analysis-only",
+      "category": "do-not-activate",
+      "prompt": "Identify which clauses are passive voice; do not rewrite them.",
+      "expect": "Return analysis rather than silently rewriting the text."
+    },
+    {
+      "id": "protect-verbatim",
+      "category": "protected-material",
+      "prompt": "Improve the surrounding paragraph but preserve the quoted contract clause exactly.",
+      "expect": "Preserve verbatim text byte for byte."
+    },
+    {
+      "id": "protect-code-and-command",
+      "category": "protected-material",
+      "prompt": "Improve this runbook while preserving its shell command and JSON example.",
+      "expect": "Preserve code, commands, and structured data."
+    },
+    {
+      "id": "audience-overrides-locale",
+      "category": "activate",
+      "prompt": "Draft copy for a US publication that requires American English.",
+      "expect": "Follow the explicit audience style instead of the British English default."
+    },
+    {
+      "id": "no-invented-position",
+      "category": "activate",
+      "prompt": "Tighten this neutral evidence summary.",
+      "expect": "Do not invent an opinion or strengthen the evidence."
+    },
+    {
+      "id": "preserve-factual-force",
+      "category": "activate",
+      "prompt": "Make this finding easier to read: the check failed in three of five runs.",
+      "expect": "Preserve the measured result and its factual force exactly."
+    },
+    {
+      "id": "light-touch-short-reply",
+      "category": "do-not-activate",
+      "prompt": "Reply: Yes, Tuesday works.",
+      "expect": "Leave a sufficient short operational response short."
+    },
+    {
+      "id": "pepys-reader-facing-prose",
+      "category": "protected-material",
+      "prompt": "Clarify a PEPYS task explanation while preserving its frontmatter, task ID, status, owner and Evidence section.",
+      "expect": "Improve reader-facing prose only; preserve canonical PEPYS fields, evidence and terminology."
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+interface:
+  display_name: "Unslop"
+  short_description: "Make reader-facing prose clear and natural"
+  default_prompt: "Use $unslop to revise this prose for its intended reader without changing its meaning."
+
+policy:
+  allow_implicit_invocation: true

@@ -1,0 +1,10 @@
+# Meminit owns these bytes; Prettier must not reformat them (hash-locked protocol
+# assets and regenerated index artifacts). See `meminit protocol check`.
+/AGENTS.md
+/.agents/skills/meminit-docops/SKILL.md
+/.agents/skills/meminit-docops/scripts/meminit_brownfield_plan.sh
+/docs/01-indices/*.index.json
+/docs/01-indices/catalogue.md
+/docs/01-indices/kanban.md
+/docs/01-indices/kanban.css
+/docs/00-governance/templates/
