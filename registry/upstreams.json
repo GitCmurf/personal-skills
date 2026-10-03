@@ -32,7 +32,7 @@
       "licence": "MIT",
       "shape": "multi-skill-repository",
       "strategy": "selective-vendor",
-      "onboarding": "planned"
+      "onboarding": "active"
     },
     "superpowers": {
       "repository": "https://github.com/obra/superpowers.git",
@@ -53,6 +53,16 @@
       "shape": "generated-multi-component-framework",
       "strategy": "private-duplicate-when-customised",
       "onboarding": "planned"
+    },
+    "coderabbit-skills": {
+      "repository": "https://github.com/coderabbitai/skills.git",
+      "web": "https://github.com/coderabbitai/skills",
+      "default_branch": "main",
+      "tracked_head": "965810ae892af34d88a8ae19e6ff69f737500b37",
+      "licence": "MIT",
+      "shape": "multi-skill-repository",
+      "strategy": "selective-vendor",
+      "onboarding": "active"
     }
   },
   "skills": {
@@ -64,6 +74,41 @@
       "implicit_invocation": true,
       "upstream_baseline": "46125561306434d8a1d7745d540d8932ab0cd2a2",
       "personal_path": "skills/unslop"
+    },
+    "tdd": {
+      "source": "mattpocock-skills",
+      "source_path": "skills/engineering/tdd",
+      "installed_name": "tdd",
+      "activation": "active",
+      "implicit_invocation": true,
+      "upstream_baseline": null,
+      "personal_path": "skills/tdd",
+      "installed_folder_hash": "75beb3030b4c979205dd771ff85ac600baeb68f4",
+      "provenance_note": "Imported locally maintained installed snapshot on 2026-10-03. Exact original upstream commit is unverified; folder hash comes from the installer lock. Source tracked_head is for update detection, not a claim that this snapshot matches that commit.",
+      "imported_files_sha256": {
+        "LICENSE": "0e7ac423bf2c6e223b7c5b156f8cf72da49d748e56a1641402c31f22ad07dbb5",
+        "tests.md": "e12182f5c4c6a844b7c6ab4b8d2623b642aaaae5460fe58ed087efd4f3d5fb8a",
+        "deep-modules.md": "f2123700bf953db1740625686c75bdd145efd486357c47c6818c869fee657a32",
+        "interface-design.md": "764c5ff0e3fa6b4ab7095eb65ccc7201e090baf19fa16051dfdb72c06d27417d",
+        "refactoring.md": "54fced22dd1911b7094c3fe7979b7c1a40d40be307482c4adf7dc0588f27d6cc",
+        "SKILL.md": "99deb6b52bbbb041869e7584a03e9ee393a8f20384297674387dcc9169123311",
+        "mocking.md": "3ceb807fdf4a47d6a93d4d9a891e5ba6d362a6247bd08adc451feebfc17361ef"
+      }
+    },
+    "code-review": {
+      "source": "coderabbit-skills",
+      "source_path": "skills/code-review",
+      "installed_name": "code-review",
+      "activation": "active",
+      "implicit_invocation": true,
+      "upstream_baseline": null,
+      "personal_path": "skills/code-review",
+      "installed_folder_hash": "5049a0877f3e224666b7bdfe4a42aaccd78b3379",
+      "provenance_note": "Imported locally maintained installed snapshot on 2026-10-03. Exact original upstream commit is unverified; folder hash comes from the installer lock. Source tracked_head is for update detection, not a claim that this snapshot matches that commit.",
+      "imported_files_sha256": {
+        "LICENSE": "eb7e076c386e9863a5309fb30dda1a695c0447e6b1a45325634ab84bfe9377f7",
+        "SKILL.md": "035101db1b54c8053761956ba2577e597c3c0b7080da6b67f72436d61c75b27b"
+      }
     }
   }
 }

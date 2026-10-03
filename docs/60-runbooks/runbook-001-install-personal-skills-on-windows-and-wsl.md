@@ -3,8 +3,8 @@ document_id: SKILLS-RUNBOOK-001
 type: RUNBOOK
 title: Install personal skills on Windows and WSL
 status: Draft
-version: '0.1'
-last_updated: '2026-08-21'
+version: '0.2'
+last_updated: '2026-10-03'
 owner: GitCmurf
 area: installation
 docops_version: '2.0'
@@ -20,8 +20,8 @@ keywords:
 > **Document ID:** SKILLS-RUNBOOK-001
 > **Owner:** GitCmurf
 > **Status:** Draft
-> **Version:** 0.1
-> **Last Updated:** 2026-08-21
+> **Version:** 0.2
+> **Last Updated:** 2026-10-03
 > **Type:** RUNBOOK
 > **Area:** installation
 > **Description:** Canonical installation and update procedure for Windows and WSL.
@@ -125,3 +125,23 @@ From each checkout, run the commands in SKILLS-TESTING-001. Then verify that:
 | Version | Date     | Author    | Changes       |
 | ------- | -------- | --------- | ------------- |
 | 0.1     | 2026-08-21 | GitCmurf | Initial draft |
+| 0.2     | 2026-10-03 | GitCmurf | Codex restoration and maintained TDD/CodeRabbit providers |
+
+## Codex restoration from dotfiles
+
+The WSL dotfiles checkout at `~/dotfiles` owns Codex preference restoration and
+skill linking. Run `~/dotfiles/scripts/dot codex preview`, then `apply` to
+recreate the selected configuration and links. Its backups can be previewed
+and restored with `scripts/dot codex restore BACKUP` and the `--apply` flag.
+See `~/dotfiles/docs/codex.md` for the full command contract.
+
+The active personal providers are `unslop`, `tdd`, and `code-review`. TDD retains
+red-green-refactor and meaningful behavioural tests while honouring already
+authorised work. CodeRabbit commands match the installed 0.8.2 CLI. These are
+maintained derivatives, not exact copies of the current upstream heads. Their
+licences, imported file hashes and installer provenance are recorded in
+`registry/upstreams.json`. Review upstream updates before incorporating them;
+do not bulk-update these installed links with a third-party skill installer.
+
+PEPYS and Meminit remain owned by their respective source repositories. The
+dotfiles workflow links them rather than vendoring or editing their protocols.

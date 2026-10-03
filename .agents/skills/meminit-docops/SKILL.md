@@ -321,28 +321,20 @@ meminit state blockers --root . --format json
 meminit state list --root . --format json
 ```
 
-### Recommended fresh-agent loop
+### Recommended agent loop
 
-1. Recognize the repository's Meminit rules from `AGENTS.md`.
-2. Run `meminit capabilities --format json` to discover the supported command
-   surface and output modes.
-3. Run `meminit context --root . --format json` to discover namespaces, allowed
-   document types, template mappings, prefixes, exclusions, and index paths.
-4. Run `meminit state next --root . --format json` to select the next queued
+1. Run `meminit context --root . --format json` to discover namespaces,
+   allowed document types, and template mappings.
+2. Run `meminit state next --root . --format json` to select the next queued
    work item.
-5. If `data.reason == "queue_empty"`, stop.
-6. If `data.entry` exists, resolve and read the selected document plus linked
+3. If `data.reason == "queue_empty"`, stop.
+4. If `data.entry` exists, resolve and read the selected document plus linked
    source docs with `meminit resolve <DOCUMENT_ID> --root . --format json`.
-7. Use `meminit index`, `resolve`, `identify`, and `link` to retrieve and cite
-   existing information instead of guessing paths.
-8. Write back new governed documents with `meminit new <TYPE> <TITLE>
-   --format json`; when editing existing documents, preserve immutable
-   `document_id` values and respect document status.
-9. Implement the atomic unit: Code + Documentation + Tests.
-10. Run `meminit check --root . --format json`, `meminit protocol check --root .
+5. Implement the atomic unit: Code + Documentation + Tests.
+6. Run `meminit check --root . --format json`, `meminit protocol check --root .
 --format json`, and relevant project tests before reporting completion.
-11. Persist the mutation with `meminit state set`.
-12. Repeat until the queue is empty.
+7. Persist the mutation with `meminit state set`.
+8. Repeat until the queue is empty.
 
 ### Safety rules
 

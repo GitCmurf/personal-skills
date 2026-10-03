@@ -1,4 +1,4 @@
-<!-- MEMINIT_PROTOCOL: begin id=agents-md version=1.0 sha256=253a16b17bed3f6c0078437dc88f2b232be7d951de9d2923b1fe219adc1d78ad -->
+<!-- MEMINIT_PROTOCOL: begin id=agents-md version=1.0 sha256=6251b941e4c135ab672f2052da2f88095454ef0bd2e26ad3c77645c84ace8100 -->
 # Agentic Coding Rules
 
 This repository (**personal-skills**) uses **Meminit DocOps** for governance.
@@ -8,14 +8,25 @@ This repository (**personal-skills**) uses **Meminit DocOps** for governance.
 Run `meminit` commands to create and manage governed documents:
 
 - `meminit init` — initialize DocOps (run once)
-- `meminit capabilities --format json` — discover the command surface
-- `meminit context --root . --format json` — discover repo DocOps metadata
-- `meminit state next --root . --format json` — select queued work
 - `meminit new <TYPE> <TITLE>` — create a new governed document
 - `meminit check` — verify compliance
 - `meminit doctor` — diagnose repo readiness
 
 Document IDs follow `SKILLS-TYPE-SEQ` (e.g., `SKILLS-ADR-001`).
+
+## Rules
+
+- Never modify a `document_id` once set.
+- Always use `meminit new` to create governed documents.
+- All code changes must include documentation and tests.
+- Never commit secrets or PII.
+<!-- MEMINIT_PROTOCOL: end id=agents-md -->
+
+# Personal skills repository guidance
+
+This is a private source repository for personal and adapted agent skills. The
+installed copies live at each harness's documented discovery path and should be
+links to this source, not independent editable copies.
 
 ## Fresh-Agent Loop
 
@@ -35,19 +46,6 @@ command output:
    `meminit protocol check --root . --format json`, and the repository tests.
    Expect another agent or reviewer to check the work against this loop.
 
-## Rules
-
-- Never modify a `document_id` once set.
-- Always use `meminit new` to create governed documents.
-- All code changes must include documentation and tests.
-- Never commit secrets or PII.
-<!-- MEMINIT_PROTOCOL: end id=agents-md -->
-
-# Personal skills repository guidance
-
-This is a private source repository for personal and adapted agent skills. The
-installed copies live at each harness's documented discovery path and should be
-links to this source, not independent editable copies.
 
 ## Authority
 

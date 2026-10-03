@@ -56,7 +56,7 @@ class PersonalSkillsRepositoryTests(unittest.TestCase):
         registry = json.loads((ROOT / "registry" / "upstreams.json").read_text(encoding="utf-8"))
         self.assertEqual(1, registry["schema_version"])
         self.assertEqual(
-            {"pstack", "mattpocock-skills", "superpowers", "impeccable"},
+            {"pstack", "mattpocock-skills", "superpowers", "impeccable", "coderabbit-skills"},
             set(registry["sources"]),
         )
         active_names: list[str] = []
@@ -67,7 +67,7 @@ class PersonalSkillsRepositoryTests(unittest.TestCase):
             if baseline is not None:
                 self.assertRegex(baseline, r"^[0-9a-f]{40}$")
         self.assertEqual(len(active_names), len(set(active_names)))
-        self.assertEqual(["unslop"], active_names)
+        self.assertEqual({"unslop", "tdd", "code-review"}, set(active_names))
 
     def test_evaluation_cases_cover_activation_and_protected_material(self) -> None:
         cases = json.loads((ROOT / "tests" / "unslop_cases.json").read_text(encoding="utf-8"))
@@ -97,12 +97,29 @@ class PersonalSkillsRepositoryTests(unittest.TestCase):
         self.assertEqual(0, result.returncode, result.stderr)
         payload = json.loads(result.stdout)
         self.assertEqual("offline", payload["mode"])
-        self.assertEqual(4, len(payload["sources"]))
+        self.assertEqual(5, len(payload["sources"]))
 
     def test_upstream_license_and_attribution_are_preserved(self) -> None:
         text = (SKILL_DIR / "LICENSE").read_text(encoding="utf-8")
         self.assertIn("MIT License", text)
         self.assertIn("Copyright (c) 2026 Lauren Tan", text)
+
+    def test_active_derivatives_have_sources_licences_and_import_evidence(self) -> None:
+        registry = json.loads((ROOT / "registry/upstreams.json").read_text())
+        for name, skill in registry["skills"].items():
+            if skill["activation"] != "active":
+                continue
+            directory = ROOT / skill["personal_path"]
+            self.assertIn(skill["source"], registry["sources"])
+            self.assertTrue((directory / "SKILL.md").is_file())
+            self.assertTrue((directory / "LICENSE").is_file())
+            if skill.get("upstream_baseline") is None:
+                self.assertTrue(skill["provenance_note"])
+                self.assertRegex(skill["installed_folder_hash"], r"^[0-9a-f]{40}$")
+                self.assertTrue({"SKILL.md", "LICENSE"} <= set(skill["imported_files_sha256"]))
+                for filename, digest in skill["imported_files_sha256"].items():
+                    self.assertTrue((directory / filename).is_file(), f"{name}: {filename}")
+                    self.assertRegex(digest, r"^[0-9a-f]{64}$")
 
 
 if __name__ == "__main__":
