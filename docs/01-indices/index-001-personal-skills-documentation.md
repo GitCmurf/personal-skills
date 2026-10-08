@@ -4,7 +4,7 @@ type: INDEX
 title: Personal skills documentation
 status: Draft
 version: '0.1'
-last_updated: '2026-08-21'
+last_updated: '2026-10-08'
 owner: GitCmurf
 docops_version: '2.0'
 area: repository
@@ -17,7 +17,7 @@ keywords:
 > **Owner:** GitCmurf
 > **Status:** Draft
 > **Version:** 0.1
-> **Last Updated:** 2026-08-21
+> **Last Updated:** 2026-10-08
 > **Type:** INDEX
 > **Area:** repository
 > **Description:** Entry point for governed personal-skills documentation.
@@ -49,9 +49,12 @@ reviewed baselines.
   gives the operational procedure and known Meminit limitations.
 - [Personal skills glossary](../70-devex/ref-001-personal-skills-glossary.md)
   defines repository terms.
+- [PR and Retro assessment](../10-prd/research-002-pr-and-retro-skills-assessment.md)
+  records the pinned imports, Codex adaptations and tool-failure review criteria.
 
 ## Current scope
 
-`unslop` is the only active personal skill. Matt Pocock's skills, Superpowers and
-Impeccable are registered as possible future sources but have not been imported,
-activated or used to supersede their installed counterparts.
+Active personal providers are `unslop`, `tdd`, `code-review`, `pr` and `retro`.
+Retro preserves explicit invocation; PR can be selected when drafting a PR body.
+Superpowers and Impeccable remain planned sources. The registry is authoritative
+for provider provenance and activation.

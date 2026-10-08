@@ -28,7 +28,7 @@
       "repository": "https://github.com/mattpocock/skills.git",
       "web": "https://github.com/mattpocock/skills",
       "default_branch": "main",
-      "tracked_head": "5b15a47f2d7150f545fbcacbfe381787fc0230dc",
+      "tracked_head": "b0618bc436ad893b3c5e84e55fba86586d34a404",
       "licence": "MIT",
       "shape": "multi-skill-repository",
       "strategy": "selective-vendor",
@@ -109,6 +109,37 @@
         "LICENSE": "eb7e076c386e9863a5309fb30dda1a695c0447e6b1a45325634ab84bfe9377f7",
         "SKILL.md": "035101db1b54c8053761956ba2577e597c3c0b7080da6b67f72436d61c75b27b"
       }
+    },
+    "pr": {
+      "source": "mattpocock-skills",
+      "source_path": "skills/engineering/pr",
+      "installed_name": "pr",
+      "activation": "active",
+      "implicit_invocation": true,
+      "upstream_baseline": "b0618bc436ad893b3c5e84e55fba86586d34a404",
+      "personal_path": "skills/pr",
+      "imported_files_sha256": {
+        "CREDITS.md": "a7a087127665d7298a72280ef6e19c41ad8404523712a788c8dc3ab414bc2497",
+        "LICENSE": "0e7ac423bf2c6e223b7c5b156f8cf72da49d748e56a1641402c31f22ad07dbb5",
+        "SKILL.md": "ab63f1cf78647389edcd386c9427c5dfca27ed2836930c24773ffee834c19bcd",
+        "agents/openai.yaml": "2295b586624db4ef546f3fd4695492f039d941a46d8a1593a702ce3ca511b8ad"
+      },
+      "provenance_note": "Imported with Skill Installer at the pinned upstream commit on 2026-10-08, plus the repository MIT licence; adapted for Codex. Hashes record the upstream import before adaptation."
+    },
+    "retro": {
+      "source": "mattpocock-skills",
+      "source_path": "skills/engineering/retro",
+      "installed_name": "retro",
+      "activation": "active",
+      "implicit_invocation": false,
+      "upstream_baseline": "b0618bc436ad893b3c5e84e55fba86586d34a404",
+      "personal_path": "skills/retro",
+      "imported_files_sha256": {
+        "LICENSE": "0e7ac423bf2c6e223b7c5b156f8cf72da49d748e56a1641402c31f22ad07dbb5",
+        "SKILL.md": "33fbc28568e3146f20fd908b12998bc0ab30aa4f4c87288199a40793efa94696",
+        "agents/openai.yaml": "cb6fb9d7e6b4be5975f41f6def1dd00a1255bad5d9b02696b124c924a8b8745c"
+      },
+      "provenance_note": "Imported with Skill Installer at the pinned upstream commit on 2026-10-08, plus the repository MIT licence; adapted for Codex. Hashes record the upstream import before adaptation."
     }
   }
 }

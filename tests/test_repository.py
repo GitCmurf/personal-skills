@@ -67,7 +67,7 @@ class PersonalSkillsRepositoryTests(unittest.TestCase):
             if baseline is not None:
                 self.assertRegex(baseline, r"^[0-9a-f]{40}$")
         self.assertEqual(len(active_names), len(set(active_names)))
-        self.assertEqual({"unslop", "tdd", "code-review"}, set(active_names))
+        self.assertEqual({"unslop", "tdd", "code-review", "pr", "retro"}, set(active_names))
 
     def test_evaluation_cases_cover_activation_and_protected_material(self) -> None:
         cases = json.loads((ROOT / "tests" / "unslop_cases.json").read_text(encoding="utf-8"))
@@ -120,6 +120,24 @@ class PersonalSkillsRepositoryTests(unittest.TestCase):
                 for filename, digest in skill["imported_files_sha256"].items():
                     self.assertTrue((directory / filename).is_file(), f"{name}: {filename}")
                     self.assertRegex(digest, r"^[0-9a-f]{64}$")
+
+    def test_pinned_import_licences_match_recorded_evidence(self) -> None:
+        import hashlib
+
+        registry = json.loads((ROOT / "registry/upstreams.json").read_text())
+        for name in ("pr", "retro"):
+            skill = registry["skills"][name]
+            directory = ROOT / skill["personal_path"]
+            self.assertRegex(skill["upstream_baseline"], r"^[0-9a-f]{40}$")
+            self.assertEqual(name, read_frontmatter(directory / "SKILL.md")["name"])
+            self.assertEqual(
+                skill["imported_files_sha256"]["LICENSE"],
+                hashlib.sha256((directory / "LICENSE").read_bytes()).hexdigest(),
+            )
+            self.assertTrue(all((directory / p).is_file() for p in skill["imported_files_sha256"]))
+            policy = (directory / "agents/openai.yaml").read_text()
+            expected = "true" if skill["implicit_invocation"] else "false"
+            self.assertRegex(policy, rf"allow_implicit_invocation: {expected}\b")
 
 
 if __name__ == "__main__":

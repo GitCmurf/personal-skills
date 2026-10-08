@@ -3,8 +3,8 @@ document_id: SKILLS-RUNBOOK-001
 type: RUNBOOK
 title: Install personal skills on Windows and WSL
 status: Draft
-version: '0.2'
-last_updated: '2026-10-03'
+version: '0.3'
+last_updated: '2026-10-08'
 owner: GitCmurf
 area: installation
 docops_version: '2.0'
@@ -20,8 +20,8 @@ keywords:
 > **Document ID:** SKILLS-RUNBOOK-001
 > **Owner:** GitCmurf
 > **Status:** Draft
-> **Version:** 0.2
-> **Last Updated:** 2026-10-03
+> **Version:** 0.3
+> **Last Updated:** 2026-10-08
 > **Type:** RUNBOOK
 > **Area:** installation
 > **Description:** Canonical installation and update procedure for Windows and WSL.
@@ -126,6 +126,7 @@ From each checkout, run the commands in SKILLS-TESTING-001. Then verify that:
 | ------- | -------- | --------- | ------------- |
 | 0.1     | 2026-08-21 | GitCmurf | Initial draft |
 | 0.2     | 2026-10-03 | GitCmurf | Codex restoration and maintained TDD/CodeRabbit providers |
+| 0.3     | 2026-10-08 | GitCmurf | Add pinned PR and Retro derivatives and their invocation guidance |
 
 ## Codex restoration from dotfiles
 
@@ -135,13 +136,19 @@ recreate the selected configuration and links. Its backups can be previewed
 and restored with `scripts/dot codex restore BACKUP` and the `--apply` flag.
 See `~/dotfiles/docs/codex.md` for the full command contract.
 
-The active personal providers are `unslop`, `tdd`, and `code-review`. TDD retains
+The active personal providers are `unslop`, `tdd`, `code-review`, `pr`, and `retro`. TDD retains
 red-green-refactor and meaningful behavioural tests while honouring already
 authorised work. CodeRabbit commands match the installed 0.8.2 CLI. These are
 maintained derivatives, not exact copies of the current upstream heads. Their
 licences, imported file hashes and installer provenance are recorded in
 `registry/upstreams.json`. Review upstream updates before incorporating them;
 do not bulk-update these installed links with a third-party skill installer.
+
+PR and Retro are pinned Codex adaptations assessed in SKILLS-RESEARCH-002.
+Use `$pr` to draft a PR body, or `$retro` to review a session's friction and
+propose improvements. Retro retains explicit invocation and does not write
+global instructions or memory automatically. Dotfiles restores both links into
+`~/.agents/skills`; verify their targets and discovery on the next turn.
 
 PEPYS and Meminit remain owned by their respective source repositories. The
 dotfiles workflow links them rather than vendoring or editing their protocols.
