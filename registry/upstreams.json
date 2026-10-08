@@ -58,7 +58,7 @@
       "repository": "https://github.com/coderabbitai/skills.git",
       "web": "https://github.com/coderabbitai/skills",
       "default_branch": "main",
-      "tracked_head": "965810ae892af34d88a8ae19e6ff69f737500b37",
+      "tracked_head": "928c3b61f71b578b1bcfbacc289f1446244dd9dd",
       "licence": "MIT",
       "shape": "multi-skill-repository",
       "strategy": "selective-vendor",
@@ -104,10 +104,16 @@
       "upstream_baseline": null,
       "personal_path": "skills/code-review",
       "installed_folder_hash": "5049a0877f3e224666b7bdfe4a42aaccd78b3379",
-      "provenance_note": "Imported locally maintained installed snapshot on 2026-10-03. Exact original upstream commit is unverified; folder hash comes from the installer lock. Source tracked_head is for update detection, not a claim that this snapshot matches that commit.",
+      "provenance_note": "Imported locally maintained installed snapshot on 2026-10-03. Exact original upstream commit is unverified; folder hash comes from the installer lock. Source tracked_head is for update detection, not a claim that this snapshot matches that commit. Selectively refreshed on 2026-10-08 against reviewed_upstream_commit and installed CLI 0.9.0. Original import hashes and unknown baseline are retained; reviewed hashes record reference evidence, not a wholesale import.",
       "imported_files_sha256": {
         "LICENSE": "eb7e076c386e9863a5309fb30dda1a695c0447e6b1a45325634ab84bfe9377f7",
         "SKILL.md": "035101db1b54c8053761956ba2577e597c3c0b7080da6b67f72436d61c75b27b"
+      },
+      "reviewed_upstream_commit": "928c3b61f71b578b1bcfbacc289f1446244dd9dd",
+      "reviewed_upstream_files_sha256": {
+        "SKILL.md": "35b51aa7d203d251a439c8dff87e2676d6ea3b9f4b7cbc07efdbe57a95974192",
+        "references/auth-recovery.md": "8f9a516965754eb77382e5684f5ddcfdd12b0c722617aad6236abc481cecf167",
+        "references/cli-workflows.md": "2fb381521816eb96775c5e45df59199e2f92f3954e641d178c9081377a97b0a1"
       }
     },
     "pr": {

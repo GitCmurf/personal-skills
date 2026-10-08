@@ -52,6 +52,9 @@ reviewed baselines.
 - [PR and Retro assessment](../10-prd/research-002-pr-and-retro-skills-assessment.md)
   records the pinned imports, Codex adaptations and tool-failure review criteria.
 
+- [CodeRabbit 0.9 skill refresh](../10-prd/research-003-coderabbit-09-skill-refresh.md)
+  records CLI compatibility, selective upstream adaptations and stream validation.
+
 ## Current scope
 
 Active personal providers are `unslop`, `tdd`, `code-review`, `pr` and `retro`.
