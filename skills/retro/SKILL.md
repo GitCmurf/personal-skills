@@ -26,6 +26,11 @@ recovery, and cost. Separate facts from hypotheses. Group repeated instances of
 the same cause; a single incident can justify a fix when its impact is clear.
 Do not equate every non-zero exit with a broken tool.
 
+Use completion metadata and the relevant command's actual output, not a keyword
+count: code, documentation and successful test output can mention errors.
+Inspect nested results when a tool call batches commands. A shell batch's final
+exit code can hide an earlier failed command; verify the stage that mattered.
+
 For tool-call failures, distinguish:
 
 - **Invocation errors:** wrong schema, unavailable tool, wrong namespace, invalid

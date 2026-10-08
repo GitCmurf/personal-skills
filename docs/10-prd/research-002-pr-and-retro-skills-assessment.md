@@ -120,6 +120,16 @@ Preview rollback with `~/dotfiles/scripts/dot codex restore BACKUP`; append
 the permitted escalated route because `.codex` was read-only inside the sandbox.
 This is additional access-boundary evidence, not proof of broken skill syntax.
 
+The first live Retro trial inspected six top-level Codex sessions dated
+2026-10-05 through 2026-10-08, including the ongoing Drawbar session begun on
+October 5. It exposed a false-positive risk in keyword-only log scanning:
+successful source reads can contain error strings, and batched results require
+inspection of nested completion metadata. Retro now states this explicitly.
+Minimal DNS, loopback-socket and backup-file probes failed in the sandbox and
+succeeded through the permitted elevated route; the probes left no service or
+temporary backup file running. This verifies an access-boundary cause for those
+specific failures, not every historical tool failure.
+
 Dotfiles now lists `pr` and `retro` as personal providers. The source repository
 remains `~/code/skills`; installed links belong in `~/.agents/skills`. In Codex,
 invoke `Use $retro to review this session's tool failures` or `Use $pr to draft
