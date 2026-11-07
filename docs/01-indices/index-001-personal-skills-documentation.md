@@ -32,7 +32,7 @@ keywords:
 
 ## Content
 
-This private repository is the canonical home for the owner's personal and
+This public repository is the canonical home for the owner's personal and
 adapted agent skills. `skills/` contains active source; standard discovery
 locations link to it. `registry/upstreams.json` records licensed origins and
 reviewed baselines.
@@ -54,6 +54,8 @@ reviewed baselines.
 
 - [CodeRabbit 0.9 skill refresh](../10-prd/research-003-coderabbit-09-skill-refresh.md)
   records CLI compatibility, selective upstream adaptations and stream validation.
+- [Publish the personal skills repository](../45-adr/adr-002-publish-the-personal-skills-repository.md)
+  records the move to public visibility and the no-PII rule.
 
 ## Current scope
 

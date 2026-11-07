@@ -37,7 +37,7 @@ keywords:
 
 ## 0. Overview
 
-This procedure installs the private canonical repository for Codex desktop and
+This procedure installs the canonical repository for Codex desktop and
 CLI use. Windows and Ubuntu use separate native checkouts; the standard discovery
 folders contain links, not editable copies.
 
@@ -50,7 +50,7 @@ folders contain links, not editable copies.
 - Windows uses GitHub Credential Manager over HTTPS.
 - WSL retains SSH and uses a persistent user `ssh-agent`; it is not switched to
   HTTPS for routine work.
-- The private remote is `GitCmurf/personal-skills`.
+- The remote is `GitCmurf/personal-skills` (public; see SKILLS-ADR-002).
 - OpenAI's documented user-level discovery location is `$HOME/.agents/skills`.
 - Managed plugin caches under `.codex/plugins/cache` are not edited.
 

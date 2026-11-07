@@ -24,7 +24,8 @@ Document IDs follow `SKILLS-TYPE-SEQ` (e.g., `SKILLS-ADR-001`).
 
 # Personal skills repository guidance
 
-This is a private source repository for personal and adapted agent skills. The
+This is a public source repository for personal and adapted agent skills. Never
+commit PII (see SKILLS-ADR-002). The
 installed copies live at each harness's documented discovery path and should be
 links to this source, not independent editable copies.
 

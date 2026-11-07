@@ -167,7 +167,7 @@ import the planned Matt Pocock, Superpowers or Impeccable skills.
 <!-- AGENT: Track what this ADR supersedes and what supersedes it. -->
 
 - Supersedes: none
-- Superseded by: none
+- Superseded by: SKILLS-ADR-002, for repository visibility only
 
 ## 10. Notes for Agents
 
