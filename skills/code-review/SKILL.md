@@ -1,15 +1,25 @@
 ---
 name: code-review
-description: "Review code changes with CodeRabbit, interpret review results, or retrieve saved local and GitHub PR findings. Default skill for code and PR review requests and when a code review is needed."
+description: "Review code changes: a two-axis review against repository standards and the originating spec, a CodeRabbit CLI review, or retrieval of saved local and GitHub PR findings. Default skill for code and PR review requests and when a code review is needed."
 metadata:
-  version: "0.2.0"
+  version: "0.3.0"
 ---
 
-# CodeRabbit review
+# Code review
 
-Command examples were checked against CLI **0.9.0** on 2026-10-08. Check the
-installed command's help when versions differ; public docs and upstream skills
-can lag or describe unavailable options.
+## Choose the review
+
+Start with the two-axis review in
+[references/two-axis-review.md](references/two-axis-review.md). It runs
+locally, sends no code to a third party and spends no review allowance. Add a
+CodeRabbit review when the user asks for one or the change is risky enough to
+spend a rate-limited slot; go straight to CodeRabbit when the user names it.
+Report each source under its own heading, keeping their findings and
+severities separate.
+
+The rest of this file covers CodeRabbit. Command examples were checked against
+CLI **0.9.0** on 2026-10-08. Check the installed command's help when versions
+differ; public docs and upstream skills can lag or describe unavailable options.
 
 ## Establish scope and execution context
 

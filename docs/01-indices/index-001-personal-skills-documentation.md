@@ -56,10 +56,13 @@ reviewed baselines.
   records CLI compatibility, selective upstream adaptations and stream validation.
 - [Publish the personal skills repository](../45-adr/adr-002-publish-the-personal-skills-repository.md)
   records the move to public visibility and the no-PII rule.
+- [Consolidate duplicate skills](../10-prd/research-004-consolidate-duplicate-skills-and-import-grilling-and-teach.md)
+  records one provider per intent and the grilling and teaching imports.
 
 ## Current scope
 
-Active personal providers are `unslop`, `tdd`, `code-review`, `pr` and `retro`.
+Active personal providers are `unslop`, `tdd`, `code-review`, `pr`, `retro`,
+`teach`, `grilling`, `domain-modeling`, `grill-with-docs` and `writing-for-agents`.
 Retro preserves explicit invocation; PR can be selected when drafting a PR body.
 Superpowers and Impeccable remain planned sources. The registry is authoritative
 for provider provenance and activation.

@@ -67,7 +67,21 @@ class PersonalSkillsRepositoryTests(unittest.TestCase):
             if baseline is not None:
                 self.assertRegex(baseline, r"^[0-9a-f]{40}$")
         self.assertEqual(len(active_names), len(set(active_names)))
-        self.assertEqual({"unslop", "tdd", "code-review", "pr", "retro"}, set(active_names))
+        self.assertEqual(
+            {
+                "unslop",
+                "tdd",
+                "code-review",
+                "pr",
+                "retro",
+                "teach",
+                "grilling",
+                "domain-modeling",
+                "grill-with-docs",
+                "writing-for-agents",
+            },
+            set(active_names),
+        )
 
     def test_evaluation_cases_cover_activation_and_protected_material(self) -> None:
         cases = json.loads((ROOT / "tests" / "unslop_cases.json").read_text(encoding="utf-8"))
@@ -128,11 +142,50 @@ class PersonalSkillsRepositoryTests(unittest.TestCase):
         self.assertIn("not by reflex before every push", flat)
         self.assertIn("rather than retrying", flat)
 
+    def test_code_review_routes_to_two_axis_review_with_its_licence(self) -> None:
+        import hashlib
+
+        directory = ROOT / "skills" / "code-review"
+        text = (directory / "SKILL.md").read_text(encoding="utf-8")
+        self.assertIn("references/two-axis-review.md", text)
+        reference = (directory / "references" / "two-axis-review.md").read_text(encoding="utf-8")
+        self.assertIn("**Standards**", reference)
+        self.assertIn("**Spec**", reference)
+        self.assertNotIn("setup-matt-pocock-skills", reference)
+        registry = json.loads((ROOT / "registry/upstreams.json").read_text())
+        derivation = registry["skills"]["code-review"]["additional_derivations"][0]
+        self.assertEqual("mattpocock-skills", derivation["source"])
+        self.assertRegex(derivation["upstream_baseline"], r"^[0-9a-f]{40}$")
+        for relative in derivation["personal_files"]:
+            self.assertTrue((directory / relative).is_file(), relative)
+        self.assertEqual(
+            derivation["imported_files_sha256"]["LICENSE"],
+            hashlib.sha256(
+                (directory / "references" / "LICENSE-mattpocock-skills").read_bytes()
+            ).hexdigest(),
+        )
+
+    def test_grill_with_docs_composes_active_skills(self) -> None:
+        registry = json.loads((ROOT / "registry/upstreams.json").read_text())
+        active = {s["installed_name"] for s in registry["skills"].values() if s["activation"] == "active"}
+        text = (ROOT / "skills" / "grill-with-docs" / "SKILL.md").read_text(encoding="utf-8")
+        for composed in ("grilling", "domain-modeling"):
+            self.assertIn(f"`{composed}`", text)
+            self.assertIn(composed, active)
+
     def test_pinned_import_licences_match_recorded_evidence(self) -> None:
         import hashlib
 
         registry = json.loads((ROOT / "registry/upstreams.json").read_text())
-        for name in ("pr", "retro"):
+        for name in (
+            "pr",
+            "retro",
+            "teach",
+            "grilling",
+            "domain-modeling",
+            "grill-with-docs",
+            "writing-for-agents",
+        ):
             skill = registry["skills"][name]
             directory = ROOT / skill["personal_path"]
             self.assertRegex(skill["upstream_baseline"], r"^[0-9a-f]{40}$")
