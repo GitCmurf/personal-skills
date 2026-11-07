@@ -121,6 +121,13 @@ class PersonalSkillsRepositoryTests(unittest.TestCase):
                     self.assertTrue((directory / filename).is_file(), f"{name}: {filename}")
                     self.assertRegex(digest, r"^[0-9a-f]{64}$")
 
+    def test_code_review_rations_the_shared_free_tier_allowance(self) -> None:
+        text = (ROOT / "skills" / "code-review" / "SKILL.md").read_text(encoding="utf-8")
+        flat = " ".join(text.split())
+        self.assertIn("rate-limited allowance", flat)
+        self.assertIn("not by reflex before every push", flat)
+        self.assertIn("rather than retrying", flat)
+
     def test_pinned_import_licences_match_recorded_evidence(self) -> None:
         import hashlib
 

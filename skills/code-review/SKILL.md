@@ -16,6 +16,11 @@ can lag or describe unavailable options.
 - Resolve the installed `coderabbit` with `command -v` and `readlink -f`; use
   that verified, quoted absolute executable in subsequent calls. Reject a
   repository-provided executable. Run from the verified project checkout.
+- On the free tier, CLI reviews and the GitHub PR bot draw on the same small,
+  rate-limited allowance. Run a CLI review when its feedback is worth a slot,
+  such as a requested review or the riskiest change in a task, not by reflex
+  before every push. If the CLI reports a review limit, say so and continue
+  with local review rather than retrying.
 - A review sends selected code and explicit instruction files to CodeRabbit.
   Use existing authorization for the target repository; approval for another
   repository does not transfer. If disclosure is unapproved, continue with a

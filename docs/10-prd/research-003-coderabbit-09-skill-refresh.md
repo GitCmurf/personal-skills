@@ -3,8 +3,8 @@ document_id: SKILLS-RESEARCH-003
 type: RESEARCH
 title: CodeRabbit 0.9 skill refresh
 status: Draft
-version: '0.1'
-last_updated: '2026-10-08'
+version: '0.2'
+last_updated: '2026-11-07'
 owner: GitCmurf
 docops_version: '2.0'
 area: skills
@@ -15,8 +15,8 @@ description: Compatibility assessment and verification of the CodeRabbit 0.9 per
 > **Document ID:** SKILLS-RESEARCH-003
 > **Owner:** GitCmurf
 > **Status:** Draft
-> **Version:** 0.1
-> **Last Updated:** 2026-10-08
+> **Version:** 0.2
+> **Last Updated:** 2026-11-07
 > **Type:** RESEARCH
 > **Area:** skills
 > **Description:** Compatibility assessment and verification of the CodeRabbit 0.9 personal skill.
@@ -96,3 +96,16 @@ organization, region or CodeRabbit configuration was changed. This establishes
 local CLI compatibility and helper behaviour, not a new end-to-end cloud review.
 The installed discovery links activate source changes without copying or running
 `coderabbit skills`; restart or reload a cached skill context if necessary.
+
+## Amendment 2026-11-07: free-tier review allowance
+
+On the free tier, local CLI reviews and the GitHub PR bot draw on one small,
+rate-limited allowance. Observed on 2026-10-29, both reported "review limit
+reached" against the same dashboard, and the bot's footer stated about one
+included review per hour. Local runs before every push starved the PR bot.
+
+The owner's decision is that the CLI stays useful but is used judiciously. The
+skill now says to run a CLI review when its feedback is worth a slot (a requested
+review, or the riskiest change in a task), not by reflex before every push, and
+to report a review limit and continue locally rather than retry. A repository
+test asserts this guidance is present.
