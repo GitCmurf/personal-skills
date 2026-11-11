@@ -79,6 +79,7 @@ class PersonalSkillsRepositoryTests(unittest.TestCase):
                 "domain-modeling",
                 "grill-with-docs",
                 "writing-for-agents",
+                "diagnosing-bugs",
             },
             set(active_names),
         )
@@ -185,6 +186,7 @@ class PersonalSkillsRepositoryTests(unittest.TestCase):
             "domain-modeling",
             "grill-with-docs",
             "writing-for-agents",
+            "diagnosing-bugs",
         ):
             skill = registry["skills"][name]
             directory = ROOT / skill["personal_path"]

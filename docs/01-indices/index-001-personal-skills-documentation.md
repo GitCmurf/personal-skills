@@ -4,7 +4,7 @@ type: INDEX
 title: Personal skills documentation
 status: Draft
 version: '0.1'
-last_updated: '2026-10-08'
+last_updated: '2026-11-11'
 owner: GitCmurf
 docops_version: '2.0'
 area: repository
@@ -17,7 +17,7 @@ keywords:
 > **Owner:** GitCmurf
 > **Status:** Draft
 > **Version:** 0.1
-> **Last Updated:** 2026-10-08
+> **Last Updated:** 2026-11-11
 > **Type:** INDEX
 > **Area:** repository
 > **Description:** Entry point for governed personal-skills documentation.
@@ -62,7 +62,8 @@ reviewed baselines.
 ## Current scope
 
 Active personal providers are `unslop`, `tdd`, `code-review`, `pr`, `retro`,
-`teach`, `grilling`, `domain-modeling`, `grill-with-docs` and `writing-for-agents`.
+`teach`, `grilling`, `domain-modeling`, `grill-with-docs`, `writing-for-agents`
+and `diagnosing-bugs`.
 Retro preserves explicit invocation; PR can be selected when drafting a PR body.
 Superpowers and Impeccable remain planned sources. The registry is authoritative
 for provider provenance and activation.

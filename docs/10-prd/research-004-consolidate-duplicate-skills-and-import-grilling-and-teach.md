@@ -3,8 +3,8 @@ document_id: SKILLS-RESEARCH-004
 type: RESEARCH
 title: Consolidate duplicate skills and import grilling and teach
 status: Draft
-version: '0.1'
-last_updated: '2026-11-07'
+version: '0.2'
+last_updated: '2026-11-11'
 owner: GitCmurf
 docops_version: '2.0'
 area: skills
@@ -15,8 +15,8 @@ description: One provider per intent for TDD, code review and skill writing, and
 > **Document ID:** SKILLS-RESEARCH-004
 > **Owner:** GitCmurf
 > **Status:** Draft
-> **Version:** 0.1
-> **Last Updated:** 2026-11-07
+> **Version:** 0.2
+> **Last Updated:** 2026-11-11
 > **Type:** RESEARCH
 > **Area:** skills
 > **Description:** One provider per intent for TDD, code review and skill writing, and pinned imports of the grilling and teaching skills the owner uses.
@@ -71,12 +71,18 @@ detection, not the newest import.
 - **Codex metadata.** `grilling`, `domain-modeling` and `writing-for-agents`
   gained an explicit `allow_implicit_invocation: true`, matching their
   model-invoked frontmatter and the repository's metadata convention.
+- **`diagnosing-bugs` is imported (v0.2, 2026-11-11).** With both plugins off,
+  no skill covered bug diagnosis, so the owner asked for it. It is imported
+  unchanged from the same baseline, including its human-in-the-loop script
+  template, and gains the same explicit Codex invocation policy. It names no
+  other skill.
 
 ## Validation and limits
 
 Repository tests assert the active-provider set, the licence hash and invocation
 policy of every pinned import, that `code-review` points at the two-axis
 reference and carries its licence, and that `grill-with-docs` composes active
-skills. No behavioural evaluation of the merged review was run. Switching off
-the synced plugin is an owner action on claude.ai or through `/plugin`; until
+skills. `diagnosing-bugs` is covered by the same pinned-import checks. No
+behavioural evaluation of the merged review was run. Switching off the synced
+plugin is an owner action on claude.ai or through `/plugin`; until
 then, the plugin's copies remain loaded alongside these.

@@ -244,6 +244,22 @@
         "agents/openai.yaml": "eacb24b2a618cfb81dacb0416f4fdd75ddf3a8060f8ddb99aae1b1e301907e4b"
       },
       "provenance_note": "Imported from a pinned upstream clone on 2026-11-07, plus the repository MIT licence. Hashes record the upstream import before adaptation."
+    },
+    "diagnosing-bugs": {
+      "source": "mattpocock-skills",
+      "source_path": "skills/engineering/diagnosing-bugs",
+      "installed_name": "diagnosing-bugs",
+      "activation": "active",
+      "implicit_invocation": true,
+      "upstream_baseline": "4ae2317ddb22b046e26455e4f9c9b3aaaf62212d",
+      "personal_path": "skills/diagnosing-bugs",
+      "imported_files_sha256": {
+        "LICENSE": "0e7ac423bf2c6e223b7c5b156f8cf72da49d748e56a1641402c31f22ad07dbb5",
+        "SKILL.md": "849198df88cdb65fd0d97236604c1fca7ff2f22d2f705f9724a800d0266b118d",
+        "agents/openai.yaml": "3e430dbe4334a87597488c060cb3dc3786bb00c9182877d6f5ec41f62490e90b",
+        "scripts/hitl-loop.template.sh": "35103539fc36873eea36074769ad454f9379d6fc8b2dc0e26ce987fd3bfe5503"
+      },
+      "provenance_note": "Imported from a pinned upstream clone on 2026-11-11, plus the repository MIT licence. Hashes record the upstream import before adaptation."
     }
   }
 }
